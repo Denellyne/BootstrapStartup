@@ -30,12 +30,8 @@ function setupProject () {
   touch ./src/main.cpp
   touch ./README.md
   cd ./src
-  printf "CFLAGS = ''\nLIBS = '' \n" >> ./makefile
-  echo "% : %.cpp" >> ./makefile
-  printf "\tg++ \$(CFLAGS) \$(LIBS) -o \$@ $<\n\n" >> ./makefile
-  printf "clean:\n\t@echo \"Deleting...\"\n\t@rm main" >> ./makefile
-  printf "CompileFlags:\tAdd: [-std=c++23]" >> ./.clangd
-
+  echo $SCRIPTPATH
+  cp $SCRIPTPATH/makefile .
   cd ../
   echo "@${1}: " 
   ls ./
