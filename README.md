@@ -1,2 +1,4 @@
 # BootstrapStartup
-Bootstrap a project
+
+## Bootstrap a C++ project
+    Comes with a predefined structure and makefile
