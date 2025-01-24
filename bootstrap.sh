@@ -27,6 +27,7 @@ function setupProject () {
   cd ./$1
 
   mkdir ./src
+  mkdir ./src/cores
   touch ./src/main.cpp
   touch ./README.md
   cd ./src
