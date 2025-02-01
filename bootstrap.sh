@@ -26,6 +26,8 @@ function setupProject () {
   mkdir ./$1
   cd ./$1
 
+
+  cp $SCRIPTPATH/.gitignore .
   mkdir ./src
   mkdir ./src/cores
   touch ./src/main.cpp
