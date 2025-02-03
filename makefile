@@ -3,7 +3,7 @@ CFLAGS = -fimplicit-constexpr
 INCLUDES := $(shell find . -name '*.cpp')
 OBJ := $(patsubst %.cpp,%.o,$(INCLUDES))
 DEBUG = -g -Wall -Wextra -pedantic
-OUT = ./bin/main
+OUT = ../bin/main
 
 %.o: %.cpp 
 	$(CXX) $(CFLAGS) -c $< -o $@  	
