@@ -29,10 +29,12 @@ function setupProject () {
 
   cp $SCRIPTPATH/.gitignore .
   mkdir ./src
-  mkdir ./cores
   mkdir ./bin
+
+  mkdir ./src/cores
   touch ./src/main.cpp
   touch ./README.md
+
   cd ./src
   echo $SCRIPTPATH
   cp $SCRIPTPATH/makefile .
