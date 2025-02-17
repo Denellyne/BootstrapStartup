@@ -20,6 +20,6 @@ debug:
 
 clean:
 	@echo "Deleting..."
-	@rm $(OBJ)
-	@rm $(OUT)
-	@rm $(OUT)d
+	@rm -f $(OBJ)
+	@rm -f $(OUT)
+	@rm -f $(OUT)d
