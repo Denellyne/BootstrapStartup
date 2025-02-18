@@ -1,25 +1,30 @@
-CXX = g++
-CFLAGS = -fimplicit-constexpr 
+CFLAGS = -fimplicit-constexpr -std=c++20
 INCLUDES := $(shell find . -name '*.cpp')
 OBJ := $(patsubst %.cpp,%.o,$(INCLUDES))
+TEST := *.md
 DEBUG = -g -Wall -Wextra -pedantic
 OUT = ../bin/main
+CORES = ./cores/core.*
 
 %.o: %.cpp 
-	$(CXX) $(CFLAGS) -c $< -o $@  	
+	@echo "Compiling..."
+	g++ $(CFLAGS) -c $< -o $@  	
 	@echo "Compiled:" $@
 
 run: $(OBJ)
-	@echo "Compiling..."
-	$(CXX) $(CFLAGS) $(OBJ) -o $(OUT) 
+	@echo "Linking..."
+	g++ $(CFLAGS) $(OBJ) -o $(OUT) 
 	@$(OUT)
 
 debug: 
 	@echo "Compiling..."
-	$(CXX) $(DEBUG) $(CFLAGS) $(INCLUDES) -o $(OUT)d
+	g++ $(DEBUG) $(CFLAGS) $(INCLUDES) -o $(OUT)
+
+dr:
+	@echo "Compiling..."
+	g++ $(DEBUG) $(CFLAGS) $(INCLUDES) -o $(OUT)
+	@$(OUT)
 
 clean:
 	@echo "Deleting..."
-	@rm $(OBJ)
-	@rm $(OUT)
-	@rm $(OUT)d
+	@rm -f $(OBJ) $(OUT) $(TEST) $(CORES)
