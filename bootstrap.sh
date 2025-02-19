@@ -23,8 +23,8 @@ function setupProject () {
  
   cd $SCRIPTPATH
 
-  mkdir ./$1
-  cd ./$1
+  mkdir ../$1
+  cd ../$1
 
 
   cp $SCRIPTPATH/.gitignore .
@@ -75,7 +75,7 @@ setupProject "$projectName"
 
 if [[ $setToProjectDirectory == 1 ]]; then
   cd $SCRIPTPATH  
-  cd $projectName
+  cd ../$projectName
   exec $SHELL
 fi
 
