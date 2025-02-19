@@ -32,6 +32,7 @@ function setupProject () {
   mkdir ./bin
 
   mkdir ./src/cores
+  mkdir ./src/core
   touch ./src/main.cpp
   touch ./README.md
 
